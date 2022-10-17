@@ -10,7 +10,7 @@ import UpdateBlog from "./components/UpdateBlog";
 import PageNotFound from "./components/PageNotFound";
 export default function App () {
   return (
-    <div className="App">
+    <div className="App flex">
       <BrowserRouter>
         <Routes>
           <Route

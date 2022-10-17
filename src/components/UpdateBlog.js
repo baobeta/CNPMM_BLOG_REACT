@@ -5,7 +5,9 @@ import {
 } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateBlog } from "../redux/blogRedux";
-
+import {
+  Link,
+ } from "react-router-dom";
 function UpdateBlog() {
   let { id } = useParams();
   const blogsRedux = useSelector(state => state.blogs.listBlog);
@@ -24,9 +26,10 @@ function UpdateBlog() {
     navigate("/");
   }
   return (
-    <div className="mx-4">
-    <h1 className="text-center font-bold">Thêm blog tại đây</h1>
-    <form id="myForm"  onSubmit={e => handleSubmitComment(e, dispatch)}>
+    <div className="mx-4 flex-col flex flex-col h-[600px] w-[800px] mx-auto bg-white rounded-lg border shadow-md py-4 mt-20">
+     <Link className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-[150px]" to = {`/`} > 👈 Home</Link>
+    <h1 className="text-center font-bold">Sửa blog tại đây</h1>
+    <form id="myForm" className="px-4 py-4 my-auto" onSubmit={e => handleSubmitComment(e, dispatch)}>
       <div className="relative z-0 mb-6 w-full group">
         <input type="text" name="title" id="floating_email"
           className="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 text-black peer"
